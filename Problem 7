@@ -1,0 +1,33 @@
+#By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+#What is the 10001st prime number?
+
+def list_of_primes(target):
+
+    list_of_primes = []
+    
+    Numero_encontrado = False
+    prime = True
+    n = 2
+
+    while Numero_encontrado == False:
+        for element in range(2,round(n/2)+1):
+            prime = True
+            if n % element == 0:
+                prime = False
+                break
+
+        if prime == True:
+            list_of_primes.append(n)
+
+
+        if len(list_of_primes) == target:
+            Numero_encontrado = True
+
+        n = n + 1
+
+    print(list_of_primes)
+    print(list_of_primes[target-1])
+
+
+list_of_primes(10001)
+
